@@ -1,7 +1,7 @@
 .PHONY: help test
 
 # Docker image name and tag
-IMAGE:=sbol/libsbolj3-stack
+IMAGE:=gokselm/libsbolj3-stack
 TAG?=latest
 # Shell that make should use
 SHELL:=bash
