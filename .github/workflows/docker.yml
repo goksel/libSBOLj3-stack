@@ -9,6 +9,8 @@ on:
 
       - "image/**"
 
+      - "**"
+
       - "tests/**"
       - "Makefile"
       - "requirements-dev.txt"
@@ -19,6 +21,8 @@ on:
       - ".github/workflows/docker.yml"
 
       - "image/**"
+
+      - "**"
 
       - "tests/**"
       - "Makefile"
