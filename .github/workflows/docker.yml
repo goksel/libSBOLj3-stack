@@ -65,7 +65,7 @@ jobs:
           context: image/
           file: image/Dockerfile
           tags: |
-            sbol/libsbolj3-stack:latest
+            gokselm/libsbolj3-stack:latest
           push: false
 
       - name: Run tests
@@ -85,4 +85,4 @@ jobs:
           context: image/
           file: image/Dockerfile
           tags: |
-            sbol/libsbolj3-stack:${{steps.getrefs.outputs.sha12}}, sbol/libsbolj3-stack:latest
+            gokselm/libsbolj3-stack:${{steps.getrefs.outputs.sha12}}, gokselm/libsbolj3-stack:latest
