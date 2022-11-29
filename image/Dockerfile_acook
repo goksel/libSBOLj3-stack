@@ -31,7 +31,7 @@ RUN unzip ijava-kernel.zip -d ijava-kernel \
   
 RUN rm ijava-kernel.zip
 
-COPY ./Notebooks /home/jovyan/Notebooks
+COPY ../Notebooks /home/jovyan/Notebooks
 
 ENV IJAVA_CLASSPATH=/usr/SBOL/SBOL.jar
 
