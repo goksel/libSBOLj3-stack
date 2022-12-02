@@ -82,7 +82,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: docker/build-push-action@v3
         with:
-          context: image/
-          file: image/Dockerfile
+          context:
+          file: Dockerfile
           tags: |
             gokselm/libsbolj3-stack:${{steps.getrefs.outputs.sha12}}, gokselm/libsbolj3-stack:latest
