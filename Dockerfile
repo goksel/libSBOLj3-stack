@@ -14,14 +14,21 @@ USER root
 
 RUN apt-get update && apt-get install -y \
 	software-properties-common \
-	curl
+	curl 
 	
 RUN apt-get update && \
 	apt install -y openjdk-17-jdk-headless
 	
 RUN mkdir -p /usr/SBOL
 
-RUN wget -O /usr/SBOL/SBOL.jar "https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=org.sbolstandard&a=libSBOLj3&v=1.5.1-SNAPSHOT&e=jar&c=withDependencies"
+#RUN wget -O /usr/SBOL/SBOL.jar "https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=org.sbolstandard&a=libSBOLj3&v=1.5.1-SNAPSHOT&e=jar&c=withDependencies"
+RUN apt install -y maven
+RUN git clone -b develop https://github.com/goksel/libSBOLj3.git \
+  && cd libSBOLj3/libSBOLj3 \
+  && mvn install -DskipTests=true \
+  && mvn package -DskipTests=true \
+  && cp target/libSBOLj*withDependencies.jar /usr/SBOL/SBOL.jar
+
 
 RUN curl -L https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip > ijava-kernel.zip
 
